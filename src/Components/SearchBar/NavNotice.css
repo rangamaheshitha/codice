@@ -1,0 +1,10 @@
+.ul{
+    list-style:none;
+}
+
+.nav-icon {
+    font-size: 55px;
+    color:#012970;
+    margin-right: 25px;
+    position: relative;
+}

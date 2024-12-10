@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Header from './Components/Header';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+//import 'bootstrap-icons/font/bootstrap-icons.json';
+//import 'remixicon/fonts/remixicon.glyph.json';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import SideBar from './Components/Sidebar/SideBar';
+import Login from './Components/LoginExtension/login/Login';
+import Signup from './Components/LoginExtension/signup/Signup';
+
+
+import Main from './Main/Main';
 function App() {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element:     <>
+      <Header/>
+      <SideBar/>
+      <Main/>
+      
+      
+      
+      </>,
+
+    },
+    {
+      path: "/login",
+      element: <Login/>,
+    },
+    {
+      path: "/signup",
+      element: <Signup/>,
+    },
+
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={route}></RouterProvider>
     </div>
   );
 }
